@@ -3,6 +3,7 @@ Layer stack management for Paint+ layer system
 """
 
 from typing import List, Optional, Dict, Any
+import numpy as np
 from PyQt6.QtCore import QObject, pyqtSignal, QModelIndex
 from PyQt6.QtGui import QStandardItemModel, QStandardItem
 
