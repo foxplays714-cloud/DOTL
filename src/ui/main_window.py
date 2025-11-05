@@ -253,6 +253,15 @@ class PaintPlusMainWindow(QMainWindow):
         if self.tool_panel:
             self.tool_panel.tool_selected.connect(self._on_tool_selected)
 
+        # Connect canvas signals
+        if self.canvas_view:
+            self.canvas_view.canvas_clicked.connect(self._on_canvas_clicked)
+            self.canvas_view.canvas_dragged.connect(self._on_canvas_dragged)
+
+        # Connect color panel
+        if self.color_panel:
+            self.color_panel.color_changed.connect(self._on_color_changed)
+
     def _new_document(self):
         """Create a new document"""
         self.app.new_document()
