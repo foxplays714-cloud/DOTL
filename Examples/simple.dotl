@@ -1,0 +1,16 @@
+# Simple DOTL example - Basic text elements
+
+txt.create = welcomeMessage
+welcomeMessage.Text = "Hello, World!"
+welcomeMessage.Class = "welcome"
+
+h1.create = mainTitle
+mainTitle.Text = "Welcome to DOTL"
+mainTitle.Id = "title"
+
+p.create = description
+description.Text = "DOTL is a simple language for creating websites."
+
+# Add elements to the page
+welcomeMessage.add = mainTitle
+welcomeMessage.add = description
