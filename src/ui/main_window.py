@@ -302,6 +302,45 @@ class PaintPlusMainWindow(QMainWindow):
         # Update status bar with progress
         self.statusBar().showMessage(f"{message} ({value}%)")
 
+    def _on_canvas_clicked(self, pos, event):
+        """Handle canvas click events"""
+        # Get current tool and document
+        current_tool = self.tool_panel.get_current_tool() if self.tool_panel else None
+        if not current_tool or not self.app.current_document:
+            return
+
+        # Get active layer
+        layer_stack = self.app.current_document["layer_stack"]
+        active_layer = layer_stack.get_active_layer()
+        if not active_layer:
+            return
+
+        # Forward event to tool
+        current_tool.mouse_press(event, active_layer, pos)
+
+    def _on_canvas_dragged(self, pos, event):
+        """Handle canvas drag events"""
+        # Get current tool and document
+        current_tool = self.tool_panel.get_current_tool() if self.tool_panel else None
+        if not current_tool or not self.app.current_document:
+            return
+
+        # Get active layer
+        layer_stack = self.app.current_document["layer_stack"]
+        active_layer = layer_stack.get_active_layer()
+        if not active_layer:
+            return
+
+        # Forward event to tool
+        current_tool.mouse_move(event, active_layer, pos)
+
+    def _on_color_changed(self, color):
+        """Handle color change from color panel"""
+        # Get current tool and update its color
+        current_tool = self.tool_panel.get_current_tool() if self.tool_panel else None
+        if current_tool:
+            current_tool.set_color(color)
+
     def closeEvent(self, event):
         """Handle window close event"""
         if self.app.close_document():
