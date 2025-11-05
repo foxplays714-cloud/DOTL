@@ -5,7 +5,7 @@ Color panel for Paint+ UI
 from typing import Optional, Tuple
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-    QSpinBox, QSlider, QFrame, QGridLayout, QColorDialog
+    QSpinBox, QSlider, QFrame, QGridLayout, QColorDialog, QLineEdit
 )
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QColor, QPainter, QLinearGradient, QBrush
