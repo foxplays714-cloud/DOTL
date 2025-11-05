@@ -5,7 +5,7 @@ Properties panel for Paint+ UI - displays context-sensitive properties
 from typing import Optional, Dict, Any
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollArea,
-    QFrame, QSpinBox, QSlider, QComboBox, QCheckBox, QGroupBox
+    QFrame, QSpinBox, QSlider, QComboBox, QCheckBox, QGroupBox, QRadioButton
 )
 from PyQt6.QtCore import Qt
 
