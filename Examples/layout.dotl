@@ -1,0 +1,100 @@
+# Complete website layout example
+
+div.create = page
+page.Class = "container"
+
+header.create = siteHeader
+siteHeader.Class = "header"
+
+h1.create = siteTitle
+siteTitle.Text = "My Awesome Website"
+siteTitle.Class = "site-title"
+
+nav.create = mainNav
+mainNav.Class = "navigation"
+
+link.create = homeLink
+homeLink.Text = "Home"
+homeLink.Href = "/"
+homeLink.Class = "nav-link"
+
+link.create = aboutLink
+aboutLink.Text = "About"
+aboutLink.Href = "/about"
+aboutLink.Class = "nav-link"
+
+link.create = contactLink
+contactLink.Text = "Contact"
+contactLink.Href = "/contact"
+contactLink.Class = "nav-link"
+
+main.create = content
+content.Class = "main-content"
+
+h2.create = welcomeHeading
+welcomeHeading.Text = "Welcome to Our Site"
+welcomeHeading.Id = "welcome"
+
+p.create = introParagraph
+introParagraph.Text = "This is a complete website built with DOTL language. It's simple, clean, and easy to understand!"
+
+img.create = heroImage
+heroImage.Src = "/images/hero.jpg"
+heroImage.Alt = "Hero image"
+heroImage.Class = "hero-img"
+
+section.create = features
+features.Class = "features-section"
+
+h3.create = featuresTitle
+featuresTitle.Text = "Our Features"
+
+ul.create = featuresList
+featuresList.Class = "features-list"
+
+txt.create = feature1
+feature1.Text = "Easy to learn syntax"
+
+txt.create = feature2
+feature2.Text = "Clean HTML output"
+
+txt.create = feature3
+feature3.Text = "Extensible design"
+
+footer.create = siteFooter
+siteFooter.Class = "footer"
+
+p.create = footerText
+footerText.Text = "© 2024 DOTL Language. All rights reserved."
+
+# Build the navigation
+mainNav.add = homeLink
+mainNav.add = aboutLink
+mainNav.add = contactLink
+
+# Build the header
+siteHeader.add = siteTitle
+siteHeader.add = mainNav
+
+# Build the features section
+features.add = featuresTitle
+features.add = featuresList
+
+# Build the features list
+featuresList.add = feature1
+featuresList.add = feature2
+featuresList.add = feature3
+
+# Build the main content
+content.add = welcomeHeading
+content.add = introParagraph
+content.add = heroImage
+content.add = features
+
+# Build the footer
+siteFooter.add = footerText
+
+# Build the complete page
+page.add = siteHeader
+page.add = content
+page.add = siteFooter
