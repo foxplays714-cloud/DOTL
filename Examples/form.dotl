@@ -1,0 +1,43 @@
+# Form example with input fields and buttons
+
+div.create = contactForm
+contactForm.Class = "contact-form"
+
+h1.create = formTitle
+formTitle.Text = "Contact Us"
+formTitle.Class = "form-title"
+
+form.create = userForm
+userForm.Action = "/submit"
+userForm.Method = "POST"
+userForm.Class = "user-form"
+
+input.create = nameField
+nameField.Type = "text"
+nameField.Placeholder = "Enter your name"
+nameField.Name = "username"
+nameField.Required = "true"
+
+input.create = emailField
+emailField.Type = "email"
+emailField.Placeholder = "Enter your email"
+emailField.Name = "email"
+emailField.Required = "true"
+
+textarea.create = messageField
+messageField.Placeholder = "Your message here..."
+messageField.Name = "message"
+
+btn.create = submitButton
+submitButton.Text = "Submit"
+submitButton.Type = "submit"
+submitButton.Class = "btn btn-primary"
+
+# Build the form structure
+userForm.add = nameField
+userForm.add = emailField
+userForm.add = messageField
+userForm.add = submitButton
+
+contactForm.add = formTitle
+contactForm.add = userForm
